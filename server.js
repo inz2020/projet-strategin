@@ -2,14 +2,13 @@ import express from "express"
 import path from 'path'
 import dotenv from 'dotenv'
 dotenv.config({ path: path.join(__dirname, './config/.env') });
-require('./config/database')
-
+import ('./config/database')
 import cookieParser from 'cookie-parser'
-const app = express()
 import userRoutes from "./routes/user.route"
 import cors from "cors"
 
-//import des middlewares
+const app = express()
+    //import des middlewares
 import { checkUser, requireAuth } from './middlewares/auth.middleware'
 
 //creation de variable contenant tout ce qu'on accepte
