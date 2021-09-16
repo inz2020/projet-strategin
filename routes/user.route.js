@@ -1,5 +1,5 @@
 import express from "express"
-var router = express.Router()
+let router = express.Router()
 
 import { signUp, signIn, logout } from './../controllers/auth.controller';
 import { getUsers, getUserById } from './../controllers/user.controller';

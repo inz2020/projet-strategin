@@ -22,10 +22,9 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-//Crypter les passwords à la sortie de la 
+//Crypter les passwords à la sortie de la BD
 userSchema.pre("save", async function(next) {
-    //bcrypt va generer une serie ded code qui va saler le password
-
+    //bcrypt va generer une serie de code qui va saler le password
     const salt = await bcrypt.genSalt()
         //On ajoute ce code salé au password
     this.password = await bcrypt.hash(this.password, salt)

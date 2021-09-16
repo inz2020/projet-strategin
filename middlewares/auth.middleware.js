@@ -1,9 +1,13 @@
 import jwt from 'jsonwebtoken'
 import userModel from '../models/user.model'
 
-//Tester l user
+//Tester si l user existe 
 export const checkUser = (req, res, next) => {
+    //verification de notre cookie appélé jwt
     const token = req.cookies.jwt;
+
+    //Si nous avons le cookie, nous verifions ensuite le jeton pour obtenir les donnés.
+    //Cependant si une erreur se produit, nous interdisons l'accès au co,ontrolleur
     if (token) {
         jwt.verify(token,
             process.env.TOKEN_SECRET,

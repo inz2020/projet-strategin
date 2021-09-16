@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import { signUpErrors, signInErrors } from '../utils/errors.utils'
 
 
-//Creation de la clé secrete generée à partir de l'id user de mon TOKEN_SECRET que j'ai defini dand .env
+//Creation de la clé secrete generée à partir de l'id user de mon TOKEN_SECRET que j'ai defini dans .env
 
 //Un delai pour 3 jours d'expiration
 const maxAge = 24 * 60 * 60 * 3 * 1000
